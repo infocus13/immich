@@ -2907,6 +2907,8 @@ export type ServerStorageResponseDto = {
     diskUseRaw: number;
 };
 export type ServerVersionResponseDto = {
+    /** Highest feature level supported by the server, which increments independently of the release version */
+    featureLevel: number;
     /** Major version number */
     major: number;
     /** Minor version number */

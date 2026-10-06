@@ -1325,3 +1325,12 @@ export enum SearchOrderField {
 }
 
 export const SearchOrderFieldSchema = z.enum(SearchOrderField).meta({ id: 'SearchOrderField' });
+
+export enum ServerFeatureLevel {
+  SyncMemoriesV2 = 1,
+}
+
+export const ServerFeatureLevelSchema = z
+  .enum(ServerFeatureLevel)
+  .describe('Server feature level')
+  .meta({ id: 'ServerFeatureLevel' });
