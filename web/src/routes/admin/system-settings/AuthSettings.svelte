@@ -29,7 +29,8 @@
   };
 
   const onBeforeSave = async () => {
-    const allMethodsDisabled = !configToEdit.oauth.enabled && !configToEdit.passwordLogin.enabled;
+    const allMethodsDisabled =
+      !configToEdit.oauth.enabled && !configToEdit.passkey.enabled && !configToEdit.passwordLogin.enabled;
 
     if (allMethodsDisabled) {
       const confirmed = await modalManager.show(AuthDisableLoginConfirmModal);
@@ -300,6 +301,22 @@
         </SettingAccordion>
 
         <SettingAccordion
+          key="passkey"
+          title={$t('admin.passkey_settings')}
+          subtitle={$t('admin.passkey_settings_description')}
+        >
+          <div class="ms-4 mt-4 flex flex-col gap-4">
+            <div class="ms-4 mt-4 flex flex-col">
+              <SettingSwitch
+                title={$t('admin.passkey_enable_description')}
+                {disabled}
+                bind:checked={configToEdit.passkey.enabled}
+              />
+            </div>
+          </div>
+        </SettingAccordion>
+
+        <SettingAccordion
           key="password"
           title={$t('admin.password_settings')}
           subtitle={$t('admin.password_settings_description')}
@@ -315,7 +332,7 @@
           </div>
         </SettingAccordion>
 
-        <SettingButtonsRow bind:configToEdit keys={['passwordLogin', 'oauth']} {onBeforeSave} {disabled} />
+        <SettingButtonsRow bind:configToEdit keys={['passkey', 'passwordLogin', 'oauth']} {onBeforeSave} {disabled} />
       </div>
     </form>
   </div>

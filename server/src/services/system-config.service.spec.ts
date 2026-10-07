@@ -177,6 +177,9 @@ const updatedConfig = Object.freeze<SystemConfig>({
     storageQuotaClaim: 'immich_quota',
     roleClaim: 'immich_role',
   },
+  passkey: {
+    enabled: true,
+  },
   passwordLogin: {
     enabled: true,
   },

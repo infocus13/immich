@@ -209,6 +209,9 @@ The default configuration looks like this:
     "timeout": 30000,
     "tokenEndpointAuthMethod": "client_secret_post"
   },
+  "passkey": {
+    "enabled": true
+  },
   "passwordLogin": {
     "enabled": true
   },

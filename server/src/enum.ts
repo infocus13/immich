@@ -4,6 +4,7 @@ import z from 'zod';
 export enum AuthType {
   Password = 'password',
   OAuth = 'oauth',
+  Passkey = 'passkey',
 }
 
 export enum ImmichCookie {
@@ -14,6 +15,7 @@ export enum ImmichCookie {
   SharedLinkToken = 'immich_shared_link_token',
   OAuthState = 'immich_oauth_state',
   OAuthCodeVerifier = 'immich_oauth_code_verifier',
+  PasskeyChallenge = 'immich_passkey_challenge',
 }
 
 export enum ImmichHeader {
@@ -242,6 +244,11 @@ export enum Permission {
   PartnerRead = 'partner.read',
   PartnerUpdate = 'partner.update',
   PartnerDelete = 'partner.delete',
+
+  PasskeyCreate = 'passkey.create',
+  PasskeyRead = 'passkey.read',
+  PasskeyUpdate = 'passkey.update',
+  PasskeyDelete = 'passkey.delete',
 
   PersonCreate = 'person.create',
   PersonRead = 'person.read',
@@ -1269,6 +1276,7 @@ export enum ApiTag {
   NotificationsAdmin = 'Notifications (admin)',
   ClusterGroups = 'Cluster groups',
   Partners = 'Partners',
+  Passkeys = 'Passkeys',
   People = 'People',
   Plugins = 'Plugins',
   Queues = 'Queues',

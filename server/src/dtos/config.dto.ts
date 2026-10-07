@@ -322,6 +322,9 @@ const AdminConfigSchemaWithVisibility = z
         return value;
       })
       .meta({ id: 'AdminConfigOAuthDto' }),
+    passkey: z
+      .object({ enabled: configBool.describe('Enabled').meta({ visibility: Public }) })
+      .meta({ id: 'AdminConfigPasskeyDto' }),
     passwordLogin: z
       .object({ enabled: configBool.describe('Enabled').meta({ visibility: Public }) })
       .meta({ id: 'AdminConfigPasswordLoginDto' }),
@@ -683,6 +686,9 @@ export const defaults = Object.freeze<SystemConfig>({
     tokenEndpointAuthMethod: OAuthTokenEndpointAuthMethod.ClientSecretPost,
     timeout: 30_000,
     allowInsecureRequests: false,
+  },
+  passkey: {
+    enabled: true,
   },
   passwordLogin: {
     enabled: true,

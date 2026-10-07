@@ -66,6 +66,7 @@ import { NotificationTable } from 'src/schema/tables/notification.table.js';
 import { OcrSearchTable } from 'src/schema/tables/ocr-search.table.js';
 import { PartnerAuditTable } from 'src/schema/tables/partner-audit.table.js';
 import { PartnerTable } from 'src/schema/tables/partner.table.js';
+import { PasskeyTable } from 'src/schema/tables/passkey.table.js';
 import { PersonAuditTable } from 'src/schema/tables/person-audit.table.js';
 import { PersonGroupAuditTable } from 'src/schema/tables/person-group-audit.table.js';
 import { PersonGroupTable } from 'src/schema/tables/person-group.table.js';
@@ -139,6 +140,7 @@ export class ImmichDatabase {
     OcrSearchTable,
     PartnerAuditTable,
     PartnerTable,
+    PasskeyTable,
     PersonTable,
     PersonAuditTable,
     PersonUserTable,
@@ -262,6 +264,8 @@ export interface DB {
 
   partner: PartnerTable;
   partner_audit: PartnerAuditTable;
+
+  passkey: PasskeyTable;
 
   person: PersonTable;
   person_audit: PersonAuditTable;
